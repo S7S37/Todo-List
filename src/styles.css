@@ -1,0 +1,483 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+body{
+    margin: 0;
+
+}
+
+button{
+    cursor: pointer;
+}
+
+header{
+    background-color: #0d3b66;
+    margin: 0;
+    height: 10vh;
+    width: 100%;
+    
+}
+
+header h1 {
+    margin: 0;
+    color: aliceblue;
+    padding: 1em;
+}
+
+main{
+    display: grid;
+    width: 100%;
+    height: 85vh;
+    grid-template-columns: 1fr 5fr;
+
+}
+
+.sidebar{
+    background-color: #f4d35e;
+    padding: 1em;
+    color: #0d3b66;
+    
+}
+
+.main-content{
+    background-color: #faf0ca;
+    color: #0d3b66;
+}
+
+.sidebar button {
+    vertical-align: middle;
+    display: table-cell;
+    color: #0d3b66;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 0.5em;
+    
+}
+
+.sidebar button.all{
+    text-align: center;
+    border-bottom: 3px solid aliceblue ;
+    padding: 20px 0 ;
+    margin-bottom: 20px;
+}
+
+
+
+.sidebar button.active , .sidebar button:hover  {
+    background-color: rgba(201, 199, 199, 0.5);
+}
+
+.sidebar form label {
+    display: inline-block;
+    width: 60px;
+    font-size: 1.5rem;
+}
+
+.sidebar .form-buttons  {
+    display: flex;
+    cursor: pointer;
+}
+
+.sidebar form input { 
+    width: 150px;
+}
+
+
+
+.Add-project.closed {
+    display: none;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+}
+.project h3 {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.project button.delete-project{
+    display: inline-block;
+    width: 50%;
+    font-size: 1rem;
+    
+}
+
+.todo-container{
+    margin: auto;
+    padding: 3rem;
+    height: 100%;
+    width: 70%;
+    
+}
+
+.project-button {
+    font-weight: 600;
+    text-align: left;
+    padding: 0;
+}
+
+.todo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:3px solid #0d3b66 ;
+    height: 4rem;
+    cursor: pointer;
+}
+
+.todo:hover { 
+    background-color: rgba(201, 199, 199, 0.5);
+}
+
+.todo p {
+    margin: 0;
+}
+
+.todo.High {
+    background-color: rgba(204, 43, 43, 0.425);
+}
+
+.todo.Medium{
+    background-color: rgba(204, 115, 43, 0.425);
+}
+
+.todo.Low{
+    background-color: rgba(70, 204, 43, 0.425);
+}
+
+.todo-container .add-todo{
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    height: 3rem;
+    border: none;
+    
+}
+.todo-container .todo:active{
+    outline: #0d3b66 1px solid;
+}
+.todo-container .add-todo:hover{
+    background-color: rgba(201, 199, 199, 0.5);
+}
+
+.new-todo button{
+    width: 100px;
+    padding: 5px 0;
+}
+.push-todo{
+    background-color: rgb(148, 255, 127);
+    border: none;
+    cursor: pointer;
+
+}
+
+.cancel-todo{
+    background-color: rgb(255, 127, 127);
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-todo:active , .push-todo:active{
+    outline: 1px solid black;
+}
+
+form.new-todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form .new-todo-inputs {
+    display: flex;
+    gap: 1em;
+}
+
+
+footer.footer{
+    background-color: rgba(0, 0, 0, 0.959);
+    width: 100%;
+    display: flex;
+    color: #faf0ca;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    
+    
+}
+
+.footer p {
+    display: flex;
+    align-items: center;
+}
+
+.footer img {
+    margin-left: 0.5rem;
+}
+
+div.todo-details-display{
+    color: #0d3b66;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.336);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.todo-details-display.closed{
+    display: none;
+}
+
+div.form-container{
+    padding: 32px;
+    width: 640px;
+    height: 760px;
+    background-color: #faf0ca;
+    border-radius: 16px;
+    position: relative;
+    overflow-y: auto;
+}
+
+.project-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-name h4{
+    flex-grow: 0;
+    display: flex;
+    margin: 0;
+    gap: 1em;
+    align-items: center;
+    font-weight: 500;
+}
+
+.priority{
+    background-color: #f4d35e;
+    width: 123px;
+    height: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+    
+}
+
+.priority span {
+    display: inline-block;
+    margin-right: 0.5ch;
+}
+
+.todo-title h3{
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 24px;
+    width: 576px;
+    line-height: 1.1;
+}
+
+.due-date-container{
+    border-top:1px solid #0d3b662d;   
+    border-bottom:1px solid #0d3b662d;   
+    margin-top: 24px;
+    padding: 12px 0;
+}
+
+.due-date-container h3{
+    margin: 0;
+    font-weight: 400;
+}
+
+.due-date-container .due-date-input {
+    margin: 0;
+    margin: 8px 0;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+}
+
+.description-container{
+     margin-top: 24px;
+}
+
+.description-container textarea {
+    background-color: transparent;
+    width: 100%;
+    border-radius: 12px;
+    border-left: 4px #F4D35E solid;
+    min-height: 104px;
+    padding: 16px;
+    overflow-y: auto;
+    line-height: 1.5;
+    font-weight: 600;
+    font-size: 16px;
+    resize: none;
+    
+}
+
+.due-date{
+    display: flex;
+    gap: 8px;
+}
+
+.subtask{
+    margin: 10px 0;
+    display: flex;
+}
+
+.subtask label{
+    font-weight: 600;
+}
+
+.new-sub-task{
+    width: 100%;
+}
+
+.add-sub-task{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 16px;
+    border: #0d3b66 1px solid;
+}
+
+.add-sub-task:active{
+    background-color: rgba(0, 0, 0, 0.164);
+    box-shadow: none;
+}
+
+.new-sub-task input {
+    width: 91%;
+    background-color: transparent;
+    border-radius: 8px;
+    border: #F4D35E 3px solid;
+
+}
+
+.new-sub-task .buttons{
+    margin-top: 8px;
+}
+
+.new-sub-task button{
+    width: 49%;
+}
+
+.new-sub-task button.add-subclass{
+
+    background-color: rgb(148, 255, 127);
+    border: none;
+}
+
+.new-sub-task button.cancel-subclass{
+    background-color: rgb(255, 127, 127);
+    border: none;
+}
+
+.subtask input{
+    appearance: none;
+}
+
+.subtask input::before{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: #0d3b66 solid 1px;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+.subtask input:checked:before{
+    background-color: #F4D35E;
+    display: flex;
+    justify-content: center;
+    content: "✔";
+    font-weight: 900;
+    color: #faf0ca;
+}
+
+button.save-button{
+    font-weight: 600;
+    width: 78px;
+    height: 44px;
+    text-align: center;
+    background-color: #F4D35E;
+    border: none;
+    border-radius: 8px;
+}
+
+.todo-details-controls{
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    right: 32px;
+
+}
+
+.cancel-button{
+    padding: 12px 20px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #0d3b66;
+}
+
+.delete-todo{
+    padding: 12px 20px;
+    background-color: rgb(255, 43, 43);
+    color: #faf0ca;
+    border: none;
+    border-radius: 8px;
+}
+
+.mark-complete{
+    background-color: transparent;
+    padding: 12px 20px;
+    border-radius: 16px;
+    border:solid 1px #0d3b66;
+}
+
+.todo-details-display button:active{
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.336);
+}
+
+.mark-complete.complete {
+    background-color: #f4d35e;
+}
+.mark-complete.complete::after{
+    content: "Not completed";
+}
+
+
+.mark-complete::after{
+    content: "Completed";
+}
+
+form.closed,
+.add-sub-task.closed,
+.new-sub-task.closed {
+    display: none;
+}
+
+.sub-tasks-container{
+    overflow-y: auto;
+    height: 235px;
+}
