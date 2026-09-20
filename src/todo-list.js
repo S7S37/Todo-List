@@ -35,7 +35,7 @@ let todoListMaker = (function(){
         todoList = JSON.parse(localStorage.getItem("todoList"))
         for (const project of todoList){
             for (const todo of project.list){
-                Object.setPrototypeOf(todo , Todo)
+                Object.setPrototypeOf(todo , Todo.prototype)
             }
         }
     }
